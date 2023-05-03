@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button } from "antd";
+// import {useNavigate} from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="heroContainer ">
+      <br />
+      <h1>Welcome to Sentimental Geek</h1>
+      
+      <br />
+
+      <input type="text" placeholder="Type here" />
+      <br />
+      <br />
+      <Button type="primary">Get Analyis</Button>
     </div>
   );
 }
 
+
+
 export default App;
+
+
