@@ -2,10 +2,9 @@ import { Button, Input, Form } from "antd";
 import { useState } from "react";
 
 export default function SentimentForm() {
-  const [response, setResponse] = useState([]);
+  const [response, setResponse] = useState(null);
 
   const handleSubmit = (userInput) => {
-    console.log(userInput);
     fetch(`https:sentimental-genie.web.app/sentiment`, {
       method: "POST",
       headers: {
@@ -18,26 +17,43 @@ export default function SentimentForm() {
       .catch(console.error);
   };
 
+  // console.log(response.choices[0].text)
+
   return (
     <div className="heroContainer ">
-      <br />
       <h1>Welcome to Sentimental Geek</h1>
-      <br />
+
       <Form onFinish={handleSubmit}>
         <Form.Item label="Enter Text" name="userInput">
           <Input type="text" />
         </Form.Item>
         <Form.Item>
           <Button className="button" type="primary" htmlType="submit">
-            {" "}
-            Get Sentiment Analysis{" "}
+            Get Sentiment Analysis
           </Button>
         </Form.Item>
       </Form>
-      <br />
+
       <div>
-        <p> {response.choices[0].text} </p>
+        <p>
+          Text sentiment result:
+          {!response
+            ? " no response" 
+            : response.choices[0].text }
+        </p>
       </div>
     </div>
   );
 }
+
+// response.choices[0].text
+
+// HOW COME THIS DOESN'T WORK BC MY THOUGHT PROCESS WAS: IF response[0] DOES NOT EXIST => DO THE REST. but it works without the falsy
+
+  /* <div>
+<p> Text sentiment result: { !response[0] 
+                                  ? " " 
+                                    : console.log(response.choices[0].text) && response.choices[0].text} </p>
+</div>
+</div> */
+
