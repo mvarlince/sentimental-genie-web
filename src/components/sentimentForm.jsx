@@ -38,22 +38,11 @@ export default function SentimentForm() {
         <p>
           Text sentiment result:
           {!response
-            ? " no response" 
+            ? " " 
             : response.choices[0].text }
         </p>
       </div>
     </div>
   );
 }
-
-// response.choices[0].text
-
-// HOW COME THIS DOESN'T WORK BC MY THOUGHT PROCESS WAS: IF response[0] DOES NOT EXIST => DO THE REST. but it works without the falsy
-
-  /* <div>
-<p> Text sentiment result: { !response[0] 
-                                  ? " " 
-                                    : console.log(response.choices[0].text) && response.choices[0].text} </p>
-</div>
-</div> */
 
