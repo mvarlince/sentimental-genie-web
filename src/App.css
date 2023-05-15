@@ -1,11 +1,24 @@
+.body{
+  background-color: blue;
+}
+.container {
+  padding-top: 180px;
+justify-content: center;
+text-align: center;
+/* border: solid rgb(68, 0, 255); */
+  margin: 50px 50px;
 
-.heroContainer{
-  /* background-color: red; */
-  /* background-image: url("RunningMan.jpg"); */
+/* display: flex; */
+}
 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding: 100px;
-  min-height: 100vh;
-} 
+/* .header {
+  border: solid red;
+}
+
+.form {
+  border: solid red;
+}
+
+.footer {
+  border: solid red;
+} */
